@@ -1,10 +1,13 @@
 const fs = require('fs');
+const Tour = require('../models/tourModel');
 
-const tours = JSON.parse(
-  fs.readFileSync(`${__dirname}/../dev-data/data/tours-simple.json`) // read the data from file during the top level code execution
-);
+//reading the data from the file
+// const tours = JSON.parse(
+//   fs.readFileSync(`${__dirname}/../dev-data/data/tours-simple.json`) // read the data from file during the top level code execution
+// );
 
 // middleware attached to router.param will have excess to four values
+
 exports.checkID = (req, res, next, val) => {
   console.log(`Tour id is: ${val}`);
 
@@ -34,11 +37,11 @@ exports.getAllTours = (req, res) => {
 
   res.status(200).json({
     status: 'success',
-    requestedAt: req.requestTime,
-    results: tours.length,
-    data: {
-      tours
-    }
+    requestedAt: req.requestTime
+    // results: tours.length,
+    // data: {
+    //   tours
+    // }
   });
 };
 
