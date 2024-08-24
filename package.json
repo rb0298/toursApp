@@ -4,15 +4,21 @@
   "description": "Learning node, express and mongoDB",
   "main": "app.js",
   "scripts": {
-    "start:dev": "nodemon server.js",
-    "start:prod": "NODE_ENV=production nodemon server.js"
+    "start": "nodemon server.js",
+    "start:prod": "NODE_ENV=production nodemon server.js",
+    "debug": "ndb server.js"
   },
-  "author": "Jonas Schmedtmann",
+  "author": "Rahul Bansal",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
-    "morgan": "^1.9.1"
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^5.13.22",
+    "morgan": "^1.9.1",
+    "slugify": "^1.6.6",
+    "validator": "^13.12.0"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
@@ -24,5 +30,8 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
     "prettier": "^1.17.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
